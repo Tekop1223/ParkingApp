@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import { NodePlayerView } from 'react-native-nodemediaclient';
 
 const ParkingPage = () => {
     const [leftSensorDistance, setLeftSensorDistance] = useState('');
@@ -46,6 +47,17 @@ const ParkingPage = () => {
 
     return (
         <View style={styles.container}>
+            <View style={styles.videoContainer}>
+                <NodePlayerView
+                    style={{ height: 200 }}
+                    ref={(vp) => { this.vp = vp }}
+                    inputUrl={"rtmp://192.168.0.115:1935/show/stream"}
+                    scaleMode={"ScaleAspectFit"}
+                    bufferTime={300}
+                    maxBufferTime={1000}
+                    autoplay={true}
+                />
+            </View>
             <View style={styles.sensorContainer}>
                 <Text style={styles.topLeftText}>{leftSensorDistance}</Text>
                 <Text style={styles.topRightText}>{rightSensorDistance}</Text>
@@ -81,6 +93,14 @@ const styles = StyleSheet.create({
     topRightText: {
         color: 'black',
         marginRight: 10,
+    },
+
+    video: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
     },
 });
 
