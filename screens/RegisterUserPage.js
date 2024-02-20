@@ -34,7 +34,6 @@ const RegisterUserPage = ({ navigation }) => {
     return (
         <View style={styles.container} >
             <View style={styles.registerContainer}>
-                <Text style={styles.text}>Register Page</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="Username"
@@ -85,11 +84,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
-    },
-    text: {
-        color: 'black',
-        fontSize: 20,
-        marginBottom: 10,
     },
     input: {
         width: 200,

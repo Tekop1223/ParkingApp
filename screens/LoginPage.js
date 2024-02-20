@@ -30,11 +30,8 @@ const LoginPage = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.loginContainer}>
-                <Text style={styles.text}>Login Page</Text>
                 <TextInput style={styles.input} placeholder="Username" placeholderTextColor="black" onChangeText={setUsername} value={username} />
                 <TextInput style={styles.input} placeholder="Password" placeholderTextColor="black" secureTextEntry={true} onChangeText={setPassword} value={password} />
-
-
                 <Button color={'red'}
                     title="Login"
                     onPress={handleLogin}
@@ -57,24 +54,20 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
     },
-
     loginContainer: {
         justifyContent: 'center',
         alignItems: 'center',
         flex: 1,
     },
-
     registerContainer: {
         marginBottom: 10,
         alignItems: 'center',
     },
-
     text: {
         color: 'black',
         fontSize: 20,
         marginBottom: 10,
     },
-
     input: {
         width: 200,
         height: 44,
@@ -85,12 +78,10 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         placeholderTextColor: 'black',
     },
-
     registerText: {
         color: 'blue',
         textDecorationLine: 'underline',
     },
-
     backText: {
         color: 'black'
     }
