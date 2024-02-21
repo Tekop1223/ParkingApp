@@ -61,13 +61,6 @@ const ParkingPage = () => {
                 <Text style={styles.topLeftText}>{leftSensorDistance}</Text>
                 <Text style={styles.topRightText}>{rightSensorDistance}</Text>
             </View>
-            <View>
-                <Button
-                    color={'red'}
-                    title="stop"
-                    onPress={() => { isRepeating.current = false; }}
-                />
-            </View>
         </View>
     );
 };
