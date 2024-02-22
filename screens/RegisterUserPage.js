@@ -10,10 +10,23 @@ const RegisterUserPage = ({ navigation }) => {
 
     // handle user registration
     const handleRegister = () => {
+
+        if (confirmPassword === '') {
+            Alert.alert('Error', 'please fill in the confirm password field');
+            return;
+        }
+
         if (password !== confirmPassword) {
             Alert.alert('Error', 'Passwords do not match');
             return;
         }
+
+        if (username === '' || password === '') {
+            Alert.alert('Error', 'Username and password can not be empty');
+            return;
+        }
+
+
 
 
         axios.post('http://192.168.0.115:3000/api/register', {
